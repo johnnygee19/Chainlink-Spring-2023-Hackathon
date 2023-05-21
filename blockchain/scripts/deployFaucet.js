@@ -12,7 +12,7 @@ async function main() {
 
   await faucet.deployed();
 
-  console.log("Address of faucet contract deployed: ", faucet.address);
+  console.log("Contract address of faucet contract deployed: ", faucet.address);
 }
 
 main().catch((error) => {
