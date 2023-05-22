@@ -6,7 +6,7 @@ const Newsletter = () => {
       <div className='max-w-[1240px] mx-auto grid lg:grid-cols-3'>
         <div className='lg:col-span-2 my-4'>
           <h1 className='md:text-4xl sm:text-3xl text-2xl font-bold py-2'>
-            We care bout the protection of your data.
+            We care about the protection of your data.
           </h1>
           <p>
           Read our{' '}
@@ -25,8 +25,8 @@ const Newsletter = () => {
             </button>
           </div>
           <p>
-            We care bout the protection of your data. Read our{' '}
-            <span className='text-[#fcd303]'>Privacy Policy.</span>
+            Transfer of Sigma tokens to your wallet can take anywhere between ~7 seconds to hours
+            depending on gas fees. 
           </p>
         </div>
       </div>
