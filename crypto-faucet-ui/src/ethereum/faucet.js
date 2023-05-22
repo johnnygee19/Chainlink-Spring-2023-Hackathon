@@ -9,44 +9,7 @@ const faucetAbi = [
     {
         "constant": true,
         "inputs": [],
-        "name": "name",
-        "outputs": [
-        {
-            "name": "",
-            "type": "string"
-        }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": false,
-        "inputs": [
-        {
-            "name": "spender",
-            "type": "address"
-        },
-        {
-            "name": "value",
-            "type": "uint256"
-        }
-        ],
-        "name": "approve",
-        "outputs": [
-        {
-            "name": "success",
-            "type": "bool"
-        }
-        ],
-        "payable": false,
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [],
-        "name": "blockReward",
+        "name": "lockTime",
         "outputs": [
         {
             "name": "",
@@ -60,7 +23,7 @@ const faucetAbi = [
     {
         "constant": true,
         "inputs": [],
-        "name": "totalSupply",
+        "name": "getBalance",
         "outputs": [
         {
             "name": "",
@@ -75,11 +38,11 @@ const faucetAbi = [
         "constant": false,
         "inputs": [
         {
-            "name": "_blockReward",
+            "name": "amount",
             "type": "uint256"
         }
         ],
-        "name": "setBlockReward",
+        "name": "setWithdrawalAmount",
         "outputs": [],
         "payable": false,
         "stateMutability": "nonpayable",
@@ -87,82 +50,40 @@ const faucetAbi = [
     },
     {
         "constant": false,
-        "inputs": [
-        {
-            "name": "from",
-            "type": "address"
-        },
-        {
-            "name": "to",
-            "type": "address"
-        },
-        {
-            "name": "value",
-            "type": "uint256"
-        }
-        ],
-        "name": "transferFrom",
-        "outputs": [
-        {
-            "name": "success",
-            "type": "bool"
-        }
-        ],
+        "inputs": [],
+        "name": "requestTokens",
+        "outputs": [],
         "payable": false,
         "stateMutability": "nonpayable",
         "type": "function"
     },
     {
-        "constant": true,
+        "constant": false,
         "inputs": [],
-        "name": "decimals",
-        "outputs": [
-        {
-            "name": "",
-            "type": "uint8"
-        }
-        ],
+        "name": "withdraw",
+        "outputs": [],
         "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [],
-        "name": "capacity",
-        "outputs": [
-        {
-            "name": "",
-            "type": "uint256"
-        }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [
-        {
-            "name": "owner",
-            "type": "address"
-        }
-        ],
-        "name": "balanceOf",
-        "outputs": [
-        {
-            "name": "balance",
-            "type": "uint256"
-        }
-        ],
-        "payable": false,
-        "stateMutability": "view",
+        "stateMutability": "nonpayable",
         "type": "function"
     },
     {
         "constant": false,
         "inputs": [],
-        "name": "destroy",
+        "name": "receive",
+        "outputs": [],
+        "payable": true,
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "constant": false,
+        "inputs": [
+        {
+            "name": "amount",
+            "type": "uint256"
+        }
+        ],
+        "name": "setLockTime",
         "outputs": [],
         "payable": false,
         "stateMutability": "nonpayable",
@@ -171,11 +92,11 @@ const faucetAbi = [
     {
         "constant": true,
         "inputs": [],
-        "name": "owner",
+        "name": "withdrawalAmount",
         "outputs": [
         {
             "name": "",
-            "type": "address"
+            "type": "uint256"
         }
         ],
         "payable": false,
@@ -185,57 +106,11 @@ const faucetAbi = [
     {
         "constant": true,
         "inputs": [],
-        "name": "symbol",
+        "name": "token",
         "outputs": [
         {
             "name": "",
-            "type": "string"
-        }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "constant": false,
-        "inputs": [
-        {
-            "name": "to",
             "type": "address"
-        },
-        {
-            "name": "value",
-            "type": "uint256"
-        }
-        ],
-        "name": "transfer",
-        "outputs": [
-        {
-            "name": "success",
-            "type": "bool"
-        }
-        ],
-        "payable": false,
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "constant": true,
-        "inputs": [
-        {
-            "name": "owner",
-            "type": "address"
-        },
-        {
-            "name": "spender",
-            "type": "address"
-        }
-        ],
-        "name": "allowance",
-        "outputs": [
-        {
-            "name": "remaining",
-            "type": "uint256"
         }
         ],
         "payable": false,
@@ -245,20 +120,12 @@ const faucetAbi = [
     {
         "inputs": [
         {
-            "name": "initialSupply",
-            "type": "uint256"
-        },
-        {
-            "name": "capacity",
-            "type": "uint256"
-        },
-        {
-            "name": "_blockReward",
-            "type": "uint256"
+            "name": "tokenAddress",
+            "type": "address"
         }
         ],
-        "payable": false,
-        "stateMutability": "nonpayable",
+        "payable": true,
+        "stateMutability": "payable",
         "type": "constructor"
     },
     {
@@ -266,21 +133,16 @@ const faucetAbi = [
         "inputs": [
         {
             "indexed": true,
-            "name": "_from",
+            "name": "to",
             "type": "address"
         },
         {
             "indexed": true,
-            "name": "_to",
-            "type": "address"
-        },
-        {
-            "indexed": false,
-            "name": "_value",
+            "name": "amount",
             "type": "uint256"
         }
         ],
-        "name": "Transfer",
+        "name": "Withdrawal",
         "type": "event"
     },
     {
@@ -288,21 +150,16 @@ const faucetAbi = [
         "inputs": [
         {
             "indexed": true,
-            "name": "_owner",
+            "name": "from",
             "type": "address"
         },
         {
             "indexed": true,
-            "name": "_spender",
-            "type": "address"
-        },
-        {
-            "indexed": false,
-            "name": "_value",
+            "name": "amount",
             "type": "uint256"
         }
         ],
-        "name": "Approval",
+        "name": "Deposit",
         "type": "event"
     }
 ];
