@@ -88,11 +88,15 @@ function App() {
   const getSigmaHandler = async () => {
     setWithdrawError("");
     setWithdrawSuccess("");
+
+    const BASE_SEPOLIA_URL = 'https://sepolia.etherscan.io/tx/';
+
     try {
       // contract.connect( providerOrSigner ) ⇒ Contract
       const faucetContractWithSigner = faucetContract.connect(signer);
       const resp = await faucetContractWithSigner.requestTokens();
-      setWithdrawSuccess("Operation succeeded - enjoy your tokens!");
+      const FULL_SEPOLIA_URL = BASE_SEPOLIA_URL + resp.hash;
+      setWithdrawSuccess(`The transaction was successful and the SGM funds were credited to your wallet address. You can see more details at ${FULL_SEPOLIA_URL}.`);
       setTransactionData(resp.hash);
       console.log(resp.hash);
     } catch (err) {
