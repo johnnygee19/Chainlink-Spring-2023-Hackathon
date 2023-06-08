@@ -32,7 +32,7 @@ const Faucet = ({error, success, handler, tx, wallet}) => {
           <br>
           </br>
           <p>
-            Only 100 Sigma tokens per day!
+            Only 50 Sigma tokens per day!
           </p>
         </div>
       </div>

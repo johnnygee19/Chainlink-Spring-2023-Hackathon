@@ -12,7 +12,7 @@ const Footer = () => {
     <div className='max-w-[1240px] mx-auto py-16 px-4 grid lg:grid-cols-3 gap-8 text-gray-300'>
       <div>
         <h1 className='w-full text-3xl font-bold text-[#fcd303]'>Sigma Token</h1>
-        <p className='py-4'>Sigma is a fungible token which lives on the Ethereum blockchain in compliance with the ERC20 Token Standard. Users are rewarded with Sigma tokens in exchange for the collection of their data when visitors visit websites as part of Sigma's "data as a currency" model. You can elect to opt out of this data collection process, but you won't be rewarded with Sigma tokens.</p>
+        <p className='py-4'>Sigma is a fungible token which lives on the Ethereum blockchain in compliance with the ERC20 Token Standard. Users are rewarded with Sigma tokens in exchange for the collection of their data when visitors visit our companion website <a href="" style={{ color: '#fcd303', textDecoration: 'underline' }}>here</a> as part of Sigma's "data as a currency" model. You can elect to opt out of this data collection process, but you won't be rewarded with Sigma tokens.</p>
         <div className='flex justify-between md:w-[75%] my-6'>
             <FaFacebookSquare size={30} />
             <FaInstagram size={30} />

@@ -5,7 +5,7 @@ import Navbar from './components/Navbar';
 import Faucet from './components/Faucet';
 import { useEffect, useState } from "react";
 import { ethers } from 'ethers';
-import faucetSmartContract from './ethereum/faucet';
+import faucetSmartContract from './ethereum/faucet'; 
 
 function App() {
   const [walletAddress, setWalletAddress] = useState("");
